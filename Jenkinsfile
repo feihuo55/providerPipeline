@@ -66,7 +66,7 @@ pipeline {
         dir(path: 'pact-provider') {
           sh 'security unlock-keychain -p "5+5!=Ten" ~/Library/Keychains/login.keychain'
           sh '/usr/local/bin/docker login -u feihuo55 -p 20010413guo'
-          sh '/usr/local/bin/docker tag $(/usr/local/bin/docker images --filter=reference=pact-provider --format "{{.ID}}") feihuo55/cdcdemo'
+          sh '/usr/local/bin/docker tag $(/usr/local/bin/docker images --filter=reference=pact-provider --format "{{.ID}}") feihuo55/cdcdemo:provider'
           sh '/usr/local/bin/docker push feihuo55/cdcdemo'
         }
 
